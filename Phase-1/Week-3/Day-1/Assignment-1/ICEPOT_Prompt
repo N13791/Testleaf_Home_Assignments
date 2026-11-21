@@ -1,0 +1,49 @@
+ICEPOT PROMPT: Bring back all Selenium languages in Ledge-3.0
+==================================================================
+
+I - INSTRUCTION
+Right now my extension only writes Selenium test code in Java.
+Please make it write Selenium code in all 4 languages again:
+JavaScript, Python, Java and C#.
+Whatever language I pick in the Language dropdown, the extension
+should write the Selenium script in that language.
+
+C - CONTEXT
+- My project is "Ledge-3.0", a Chrome extension by TestLeaf. It turns
+  manual test cases into automation scripts.
+- [STRICT]The Language dropdown already shows all 4 languages, so don't change
+  the screen or the dropdown.
+- Earlier, the other languages were switched off on purpose. Now I
+  want them switched back on for Selenium.
+
+
+E - EXAMPLE
+When no reference script is pasted, each language should follow this
+style (use these sentences exactly):
+- TypeScript: @playwright/test with `import { test, expect } from '@playwright/test'`, one `test.describe` block, one `test()` per case, web-first `expect` assertions, `page.getByRole` / `getByLabel` / `getByPlaceholder` / `locator()`.
+- JavaScript: @playwright/test with `const { test, expect } = require('@playwright/test')`, one `test.describe` block, one `test()` per case, web-first `expect` assertions.
+- Python: pytest-playwright using the `page` fixture and `from playwright.sync_api import Page, expect`, one `test_` function per case.
+- Java: com.microsoft.playwright with JUnit 5, `@BeforeAll`/`@AfterAll` for Playwright and Browser, `@BeforeEach` for a new page, `assertThat` from PlaywrightAssertions.
+- C#: Microsoft.Playwright.NUnit with a class inheriting `PageTest`, one `[Test]` async method per case, `Expect(...)` assertions.
+
+The downloaded file should be named:
+- JavaScript: ledge.spec.js
+- Python: test_ledge.py
+- Java: <ClassName>.java
+- C#: <ClassName>.cs
+
+If I paste a reference script, write the code in the same language as
+my reference script.
+
+P - PERSONA
+Act as a careful senior developer who makes small, clean changes and
+doesn't break anything that already works.
+
+O - OUTPUT
+- Make the changes in the project files.
+- Then tell me in simple words which files you changed and what you
+  changed.
+- Confirm that all 4 Selenium languages now generate code.
+
+T - TONE
+Simple and clear. Short explanation, no jargon.
